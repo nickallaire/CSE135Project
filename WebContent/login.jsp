@@ -1,25 +1,37 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<%@ page import="java.io.*,java.util.*, ucsd.shoppingApp.*" %>
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-		<title>Shopping Application</title>
-	</head>
-	<body>
-		<% if(request.getAttribute("registration_message") != null) { %>
-			<font color=green><%= request.getAttribute("registration_message") %></font>
-			</br>
-			<% request.setAttribute("registration_message", null); %>
-		<% } %>
-		<h1>Login</h1>
+<HTML>
+	<HEAD>
+		<TITLE>Login Page</TITLE>
+	</HEAD>
+	<BODY>
+		Welcome to the page that allows a returning user to login!
+		<p>
+		<form method="post" action="Login">
+			Login with text box below: <p>
+			User name: 
+			<INPUT TYPE="TEXT" NAME="name"/> <p>
+			
+			<INPUT TYPE="SUBMIT" VALUE="Login"/>
+		</FORM>
+		<form action="index.jsp" name="invalid">
+				<input type="submit" value="Go to Signup Page"/>
+			</form>
 		
-		<form name="loginForm" method="POST" action="LoginController">
-			Enter Name: <input type="text" name="username" />
-			<input type="submit" value="login" />
-		</form>
-		<br>
-		Don't have a login name? <a href="signup.jsp">Sign Up</a>
-	</body>
-</html>
+		<%
+			boolean failure = false;
+			String username = null;
+			if (request.getAttribute("failure") != null) {
+				failure = (boolean) request.getAttribute("failure");
+			}
+			
+			if (request.getAttribute("username") != null) {
+				username = request.getAttribute("username").toString();
+			}
+			
+			if (failure) {
+		%>
+				The user name <%= username %> does not exist. Please enter a valid login!
+		<%
+			}
+		%>
+	</BODY>
+</HTML>

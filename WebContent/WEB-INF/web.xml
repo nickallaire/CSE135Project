@@ -1,70 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
-  <display-name>CSE135_ShoppingApp</display-name>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+  <display-name>CSE135Project</display-name>
+  <servlet>
+    <servlet-name>SignUp</servlet-name>
+    <servlet-class>SignUpController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SignUp</servlet-name>
+    <url-pattern>/SignUp</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Login</servlet-name>
+    <servlet-class>LoginController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Login</servlet-name>
+    <url-pattern>/Login</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Category</servlet-name>
+    <servlet-class>CategoryController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Category</servlet-name>
+    <url-pattern>/Category</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Product</servlet-name>
+    <servlet-class>ProductController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Product</servlet-name>
+    <url-pattern>/Product</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Browsing</servlet-name>
+    <servlet-class>BrowsingController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Browsing</servlet-name>
+    <url-pattern>/Browsing</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Order</servlet-name>
+    <servlet-class>OrderController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Order</servlet-name>
+    <url-pattern>/Order</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Confirmation</servlet-name>
+    <servlet-class>ConfirmationController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Confirmation</servlet-name>
+    <url-pattern>/Confirmation</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>SalesAnalytics</servlet-name>
+    <servlet-class>SalesAnalyticsController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SalesAnalytics</servlet-name>
+    <url-pattern>/SalesAnalytics</url-pattern>
+  </servlet-mapping>
   <welcome-file-list>
-    <welcome-file>home.jsp</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>login.jsp</welcome-file>
   </welcome-file-list>
-  
-  <servlet>
-  	<servlet-name>LoginController</servlet-name>
-  	<servlet-class>ucsd.shoppingApp.controllers.LoginController</servlet-class>
-  </servlet>
-  <servlet-mapping>
-  	<servlet-name>LoginController</servlet-name>
-  	<url-pattern>/LoginController</url-pattern>
-  </servlet-mapping>
-  
-  <servlet>
-  	<servlet-name>RegistrationController</servlet-name>
-  	<servlet-class>ucsd.shoppingApp.controllers.RegistrationController</servlet-class>
-  </servlet>
-  <servlet-mapping>
-  	<servlet-name>RegistrationController</servlet-name>
-  	<url-pattern>/RegistrationController</url-pattern>
-  </servlet-mapping>
-  
-  <servlet>
-  	<servlet-name>ProductController</servlet-name>
-  	<servlet-class>ucsd.shoppingApp.controllers.ProductController</servlet-class>
-  </servlet>
-  <servlet-mapping>
-  	<servlet-name>ProductController</servlet-name>
-  	<url-pattern>/ProductController</url-pattern>
-  </servlet-mapping>
-  
-  <servlet>
-  	<servlet-name>CategoryController</servlet-name>
-  	<servlet-class>ucsd.shoppingApp.controllers.CategoryController</servlet-class>
-  </servlet>
-  <servlet-mapping>
-  	<servlet-name>CategoryController</servlet-name>
-  	<url-pattern>/CategoryController</url-pattern>
-  </servlet-mapping>
-  
-  <servlet>
-  	<servlet-name>ShoppingCartController</servlet-name>
-  	<servlet-class>ucsd.shoppingApp.controllers.ShoppingCartController</servlet-class>
-  </servlet>
-  <servlet-mapping>
-  	<servlet-name>ShoppingCartController</servlet-name>
-  	<url-pattern>/ShoppingCartController</url-pattern>
-  </servlet-mapping>
-  
-  <servlet>
-  	<servlet-name>BuyController</servlet-name>
-  	<servlet-class>ucsd.shoppingApp.controllers.BuyController</servlet-class>
-  </servlet>
-  <servlet-mapping>
-  	<servlet-name>BuyController</servlet-name>
-  	<url-pattern>/BuyController</url-pattern>
-  </servlet-mapping>
-  
-  
-  
-	<resource-ref>
-	    <description>DB Connection</description>
-	    <res-ref-name>jdbc/shoppingAppDB</res-ref-name>
-	    <res-type>javax.sql.DataSource</res-type>
-	    <res-auth>Container</res-auth>
-	</resource-ref>
 </web-app>
