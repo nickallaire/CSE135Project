@@ -1,4 +1,4 @@
-# CSE135: Online Database Analytics Applications Project
+# CSE 135: Online Database Analytics Applications Project
 
 Project Overview: Create a shopping application using Java/JSP with a PostgreSQL database and Tomcat server, complete with error handling and data validation
 
